@@ -27,9 +27,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun getRecipes(): List<Recipe> {
-        // Dummy data for testing
         return listOf(
-           // Add more recipes here
         )
     }
 }
