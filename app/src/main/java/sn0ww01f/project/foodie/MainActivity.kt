@@ -2,32 +2,54 @@ package sn0ww01f.project.foodie
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import sn0ww01f.project.foodie.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Initialize FloatingActionButton
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.title = "Foodie"
+
+        val viewPager = binding.viewPager
+        viewPager.adapter = object : FragmentStateAdapter(this) {
+            override fun getItemCount(): Int = 1
+
+            override fun createFragment(position: Int): Fragment {
+                return CategoryFragment()
+            }
+        }
+
+        val tabLayout = binding.tabLayout
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = when (position) {
+                0 -> "Categories"
+                else -> null
+            }
+        }.attach()
+
+        binding.fab.setOnClickListener {
             startActivity(Intent(this, AddRecipeActivity::class.java))
         }
 
-        val recipesRecyclerView = findViewById<androidx.recyclerview.widget.RecyclerView>(R.id.recipesRecyclerView)
-        recipesRecyclerView.layoutManager = LinearLayoutManager(this)
-        recipesRecyclerView.adapter = RecipesAdapter(getRecipes()) { recipe ->
-            val intent = Intent(this, RecipeDetailActivity::class.java)
-            intent.putExtra("RECIPE", recipe)
-            startActivity(intent)
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_search -> {
+                    startActivity(Intent(this, SearchActivity::class.java))
+                    true
+                }
+                else -> false
+            }
         }
-    }
-
-    private fun getRecipes(): List<Recipe> {
-        return listOf(
-        )
     }
 }

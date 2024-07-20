@@ -1,37 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecipeDetailActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <ImageView
-        android:id="@+id/recipeImage"
+        android:id="@+id/recipe_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/recipe_image_desc" />
 
     <TextView
-        android:id="@+id/recipeName"
-        android:layout_width="match_parent"
+        android:id="@+id/recipe_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:text="Recipe Name" />
 
     <TextView
-        android:id="@+id/recipeIngredients"
-        android:layout_width="match_parent"
+        android:id="@+id/recipe_rating"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Ingredients:" />
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:text="Rating" />
 
     <TextView
-        android:id="@+id/recipeSteps"
-        android:layout_width="match_parent"
+        android:id="@+id/recipe_ingredients"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Steps:" />
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:text="Ingredients" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <TextView
+        android:id="@+id/recipe_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:text="Steps" />
+
+</LinearLayout>

@@ -1,33 +1,36 @@
 package sn0ww01f.project.foodie
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Parcel
 import android.os.Parcelable
-import android.util.Base64
 
 data class Recipe(
+    val id: Int = 0,
     val name: String,
-    val imageBase64: String?,
-    val ingredients: List<String>,
-    val steps: List<String>,
-    val rating: Double
+    val categoryId: Int,
+    val ingredients: List<String> = emptyList(),
+    val steps: List<String> = emptyList(),
+    val imageBase64: String? = null,
+    val rating: Double = 0.0
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
+        parcel.readInt(),
         parcel.readString() ?: "",
+        parcel.readInt(),
+        parcel.createStringArrayList() ?: emptyList(),
+        parcel.createStringArrayList() ?: emptyList(),
         parcel.readString(),
-        parcel.createStringArrayList() ?: emptyList(),
-        parcel.createStringArrayList() ?: emptyList(),
         parcel.readDouble()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(id)
         parcel.writeString(name)
-        parcel.writeString(imageBase64)
+        parcel.writeInt(categoryId)
         parcel.writeStringList(ingredients)
         parcel.writeStringList(steps)
+        parcel.writeString(imageBase64)
         parcel.writeDouble(rating)
     }
 
@@ -45,3 +48,8 @@ data class Recipe(
         }
     }
 }
+
+data class Review(
+    val text: String,
+    val rating: Double
+)

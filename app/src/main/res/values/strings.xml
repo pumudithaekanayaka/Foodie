@@ -14,7 +14,7 @@
     <string name="recipe_name">Recipe Name</string>
     <string name="ingredients">Ingredients</string>
     <string name="steps">Steps</string>
-    <string name="recipe_image">Recipe Image</string>
+    <string name="recipe_image_desc">Recipe Image</string>
 
     <!-- Content Descriptions -->
     <string name="recipe_thumbnail">Recipe Thumbnail</string>

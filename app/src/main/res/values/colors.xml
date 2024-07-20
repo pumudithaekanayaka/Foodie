@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Light theme colors -->
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryVariant">#3700B3</color>
     <color name="colorOnPrimary">#FFFFFF</color>
@@ -11,6 +10,7 @@
     <color name="colorOnSurface">#000000</color>
     <color name="colorBackground">#FFFFFF</color>
     <color name="colorOnBackground">#000000</color>
+    <color name="colorAccent">#03DAC6</color>
     <color name="recipe_name_text">#000000</color>
     <color name="colorBottomNavIcons">#000000</color>
     <color name="colorBottomNavText">#000000</color>
