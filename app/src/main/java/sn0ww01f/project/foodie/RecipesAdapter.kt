@@ -13,7 +13,7 @@ class RecipesAdapter(
     // Method to update the list of recipes
     fun updateList(newRecipes: List<Recipe>) {
         recipes = newRecipes
-        notifyDataSetChanged()  // Notify the adapter that the data has changed
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
@@ -30,7 +30,6 @@ class RecipesAdapter(
     class RecipeViewHolder(private val binding: ItemRecipeBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(recipe: Recipe, onItemClick: (Recipe) -> Unit) {
             binding.textViewRecipeName.text = recipe.name
-            // Additional binding code for recipe image, rating, etc.
             binding.root.setOnClickListener { onItemClick(recipe) }
         }
     }

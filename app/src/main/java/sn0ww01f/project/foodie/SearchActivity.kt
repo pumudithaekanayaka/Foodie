@@ -18,9 +18,7 @@ class SearchActivity : AppCompatActivity() {
 
         recipeDatabaseHelper = RecipeDatabaseHelper(this)
 
-        // Initialize the adapter with an empty list
         adapter = RecipesAdapter(emptyList()) { recipe ->
-            // Handle recipe item click
         }
 
         binding.recyclerViewSearchResults.layoutManager = LinearLayoutManager(this)
@@ -31,7 +29,6 @@ class SearchActivity : AppCompatActivity() {
             val recipes = recipeDatabaseHelper.getAllRecipes()
             val filteredRecipes = recipes.filter { it.name.contains(query, ignoreCase = true) }
 
-            // Update the adapter with the filtered recipes
             adapter.updateList(filteredRecipes)
         }
     }
