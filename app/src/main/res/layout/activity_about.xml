@@ -5,6 +5,16 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:paddingBottom="24dp" />
+
+    <TextView
         android:id="@+id/tv_about_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -5,12 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".AddRecipeActivity">
 
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:paddingBottom="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp" />
+
     <EditText
         android:id="@+id/etRecipeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Recipe Name"
-        android:layout_margin="16dp" />
+        android:layout_below="@id/tv_title"
+        android:layout_margin="16dp"
+        />
 
     <EditText
         android:id="@+id/etRecipeImage"

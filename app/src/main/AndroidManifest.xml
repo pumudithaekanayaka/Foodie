@@ -23,13 +23,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddRecipeActivity" />
-        <activity android:name=".RecipeDetailActivity" />
-        <activity android:name=".SearchActivity"/>
-        <activity android:name=".AboutActivity"/>
+        <activity android:name=".AddRecipeActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".RecipeDetailActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".SearchActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity android:name=".AboutActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
         <activity
             android:name=".HelpActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         </activity>
     </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
