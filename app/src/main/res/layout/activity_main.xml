@@ -11,42 +11,65 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Foodie"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:gravity="left"
+            android:padding="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/fabAddRecipe"
+            android:layout_height="0dp"
+            android:layout_above="@id/fab_container"
+            android:layout_below="@id/tv_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
             tools:listitem="@layout/item_recipe" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAddRecipe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_add"
-            android:contentDescription="@string/add_recipe" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabSearchRecipe"
+        <LinearLayout
+            android:id="@+id/fab_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_search"
-            android:contentDescription="@string/search_recipe" />
+            android:orientation="horizontal"
+            android:layout_margin="16dp">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_open_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_menu"
-            android:contentDescription="@string/open_menu" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_open_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_menu"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/open_menu" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabAddRecipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_add"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/add_recipe" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSearchRecipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_search"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/search_recipe" />
+        </LinearLayout>
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView

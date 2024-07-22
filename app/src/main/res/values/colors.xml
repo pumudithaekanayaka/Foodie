@@ -8,6 +8,7 @@
     <color name="colorBackground">#FFFFFF</color>
     <color name="colorOnBackground">#000000</color>
     <color name="colorOnSurface">#000000</color>
+    <color name="transparent">@android:color/transparent</color>
 
     <color name="colorPrimaryDark">#BB86FC</color>
     <color name="colorPrimaryDarkVariant">#6200EE</color>
@@ -18,4 +19,5 @@
     <color name="colorBackgroundDark">#121212</color>
     <color name="colorOnBackgroundDark">#FFFFFF</color>
     <color name="colorOnSurfaceDark">#FFFFFF</color>
+    <color name="transparentDark">@android:color/transparent</color>
 </resources>

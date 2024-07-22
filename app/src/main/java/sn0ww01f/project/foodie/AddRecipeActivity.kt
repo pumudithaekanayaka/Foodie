@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.google.android.material.color.DynamicColors
 import sn0ww01f.project.foodie.databinding.ActivityAddRecipeBinding
 
 class AddRecipeActivity : AppCompatActivity() {
@@ -27,6 +28,12 @@ class AddRecipeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ThemeUtils.applyDynamicColors(this)
+
+        val accentColor = ThemeUtils.getDynamicAccentColor(this)
+        binding.root.setBackgroundColor(accentColor)
+        setStatusBarColor(accentColor)
 
         recipeRepository = RecipeRepository(this)
 
@@ -100,5 +107,9 @@ class AddRecipeActivity : AppCompatActivity() {
 
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(0, notification)
+    }
+
+    private fun setStatusBarColor(color: Int) {
+        window.statusBarColor = color
     }
 }

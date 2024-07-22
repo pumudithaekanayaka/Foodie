@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="CustomTheme">
+        <attr name="colorPrimary" format="color"/>
+        <attr name="colorPrimaryVariant" format="color"/>
+        <attr name="colorAccent" format="color"/>
+        <attr name="windowBackground" format="color"/>
+    </declare-styleable>
+</resources>

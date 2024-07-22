@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.Foodie" parent="Theme.MaterialComponents.DayNight">
+    <style name="Theme_Foodie" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
@@ -10,6 +10,8 @@
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
         <!-- Background -->
         <item name="android:windowBackground">@color/colorBackground</item>
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/colorBackground</item>
         <!-- Text colors -->
         <item name="colorOnBackground">@color/colorOnBackground</item>
         <item name="colorOnSurface">@color/colorOnSurface</item>

@@ -21,7 +21,7 @@
 
     <!-- Content Descriptions -->
     <string name="recipe_thumbnail">Recipe Thumbnail</string>
-    <string name="about_content">Foodie is an app that allows you to manage your favorite recipes. Developed with Kotlin, it offers features to add, view, search, and review recipes. Enjoy cooking and sharing your culinary creations!</string>
+    <string name="about_content">Foodie is an app that allows you to manage your favorite recipes. Developed with Android Studio, it offers features to add, view, search, and review recipes. Enjoy cooking and sharing your culinary creations!</string>
     <string name="help_content">To use the Foodie app, you can navigate to different sections using the Navigation Drawer. Add new recipes using the "Add Recipe" button, and search for recipes using the "Search" button. For further assistance, please contact support.</string>
 
     <!-- Dark Mode -->

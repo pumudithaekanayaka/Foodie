@@ -5,31 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".RecipeDetailActivity">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/recipe_name"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:gravity="left"
-        android:paddingBottom="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_margin="16dp" />
-
     <ImageView
         android:id="@+id/tvRecipeImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:layout_below="@id/tv_title"
         android:contentDescription="@string/recipe_image" />
 
     <TextView
         android:id="@+id/tvRecipeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:layout_margin="16dp" />
 

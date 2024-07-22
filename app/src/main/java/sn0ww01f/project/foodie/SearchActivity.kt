@@ -3,6 +3,7 @@ package sn0ww01f.project.foodie
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.color.DynamicColors
 import sn0ww01f.project.foodie.databinding.ActivitySearchBinding
 
 class SearchActivity : AppCompatActivity() {
@@ -15,6 +16,12 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ThemeUtils.applyDynamicColors(this)
+
+        val accentColor = ThemeUtils.getDynamicAccentColor(this)
+        binding.root.setBackgroundColor(accentColor)
+        setStatusBarColor(accentColor)
 
         recipeRepository = RecipeRepository(this)
         adapter = RecipeAdapter()
@@ -37,5 +44,9 @@ class SearchActivity : AppCompatActivity() {
 
     private fun search(query: String): List<Recipe> {
         return recipeRepository.searchRecipes(query)
+    }
+
+    private fun setStatusBarColor(color: Int) {
+        window.statusBarColor = color
     }
 }

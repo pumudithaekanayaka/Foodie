@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.color.DynamicColors
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import sn0ww01f.project.foodie.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +19,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DynamicColors.applyToActivitiesIfAvailable(application)
+
+        ThemeUtils.applyDynamicColors(this)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -45,6 +45,10 @@ class MainActivity : AppCompatActivity() {
         binding.fabSearchRecipe.setOnClickListener {
             startActivity(Intent(this, SearchActivity::class.java))
         }
+
+        val accentColor = ThemeUtils.getDynamicAccentColor(this)
+        binding.root.setBackgroundColor(accentColor)
+        setStatusBarColor(accentColor)
 
         navView.setNavigationItemSelectedListener {
             when (it.itemId) {
@@ -72,5 +76,9 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         val recipes = recipeRepository.getAllRecipes()
         adapter.submitList(recipes)
+    }
+
+    private fun setStatusBarColor(color: Int) {
+        window.statusBarColor = color
     }
 }
