@@ -47,6 +47,9 @@ android {
     viewBinding {
         enabled = true
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -64,6 +67,13 @@ dependencies {
     implementation libs.androidx.core.splashscreen
     implementation libs.jsoup
     implementation libs.picasso
+    def room_version = "2.5.1"
+    implementation libs.androidx.room.runtime
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation libs.androidx.room.ktx
+    implementation libs.glide
+    implementation libs.androidx.drawerlayout
+    implementation libs.androidx.appcompat
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core

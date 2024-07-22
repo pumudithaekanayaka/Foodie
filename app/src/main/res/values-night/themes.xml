@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.Foodie" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDarkVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimaryDark</item>
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/colorSecondaryDark</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryDarkVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondaryDark</item>
+        <!-- Background -->
+        <item name="android:windowBackground">@color/colorBackgroundDark</item>
+        <!-- Text colors -->
+        <item name="colorOnBackground">@color/colorOnBackgroundDark</item>
+        <item name="colorOnSurface">@color/colorOnSurfaceDark</item>
+    </style>
+</resources>

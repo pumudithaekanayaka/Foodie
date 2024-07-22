@@ -1,48 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".RecipeDetailActivity">
 
     <ImageView
-        android:id="@+id/recipe_image"
+        android:id="@+id/tvRecipeImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:contentDescription="@string/recipe_image_desc" />
+        android:contentDescription="@string/recipe_image" />
 
     <TextView
-        android:id="@+id/recipe_name"
+        android:id="@+id/tvRecipeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:text="Recipe Name" />
+        android:layout_margin="16dp" />
 
     <TextView
-        android:id="@+id/recipe_rating"
+        android:id="@+id/tvRecipeIngredients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginTop="8dp"
-        android:text="Rating" />
+        android:layout_below="@id/tvRecipeName"
+        android:layout_margin="16dp" />
 
     <TextView
-        android:id="@+id/recipe_ingredients"
+        android:id="@+id/tvRecipeSteps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
-        android:text="Ingredients" />
+        android:layout_below="@id/tvRecipeIngredients"
+        android:layout_margin="16dp" />
 
-    <TextView
-        android:id="@+id/recipe_steps"
+    <RatingBar
+        android:id="@+id/rbRecipeRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginTop="8dp"
-        android:text="Steps" />
-
-</LinearLayout>
+        android:layout_below="@id/tvRecipeSteps"
+        android:layout_margin="16dp"
+        android:numStars="5"
+        android:stepSize="0.5" />
+</RelativeLayout>

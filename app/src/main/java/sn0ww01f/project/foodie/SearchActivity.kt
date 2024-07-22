@@ -8,28 +8,34 @@ import sn0ww01f.project.foodie.databinding.ActivitySearchBinding
 class SearchActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySearchBinding
-    private lateinit var recipeDatabaseHelper: RecipeDatabaseHelper
-    private lateinit var adapter: RecipesAdapter
+    private lateinit var adapter: RecipeAdapter
+    private lateinit var recipeRepository: RecipeRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        recipeDatabaseHelper = RecipeDatabaseHelper(this)
+        recipeRepository = RecipeRepository(this)
+        adapter = RecipeAdapter()
 
-        adapter = RecipesAdapter(emptyList()) { recipe ->
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter
+
+        binding.searchButton.setOnClickListener {
+            val query = binding.searchText.text.toString()
+            performSearch(query)
         }
+    }
 
-        binding.recyclerViewSearchResults.layoutManager = LinearLayoutManager(this)
-        binding.recyclerViewSearchResults.adapter = adapter
-
-        binding.buttonSearch.setOnClickListener {
-            val query = binding.editTextSearch.text.toString()
-            val recipes = recipeDatabaseHelper.getAllRecipes()
-            val filteredRecipes = recipes.filter { it.name.contains(query, ignoreCase = true) }
-
-            adapter.updateList(filteredRecipes)
+    private fun performSearch(query: String) {
+        if (query.isNotBlank()) {
+            val results = search(query)
+            adapter.submitList(results)
         }
+    }
+
+    private fun search(query: String): List<Recipe> {
+        return recipeRepository.searchRecipes(query)
     }
 }
